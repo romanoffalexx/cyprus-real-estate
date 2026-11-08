@@ -130,6 +130,32 @@ const resources = {
         villaPolis: 'Вилла в Полисе',
         apartmentLarnaca: 'Апартаменты в Ларнаке',
       },
+      toursList: {
+        tour1: {
+          title: 'Тур "Знакомство с Кипром"',
+          description: 'Посещение Лимассола, Пафоса и Ларнаки. Просмотр 10-15 объектов недвижимости.',
+        },
+        tour2: {
+          title: 'Тур "Инвестиции в недвижимость"',
+          description: 'Глубокое изучение инвестиционных возможностей. Встречи с застройщиками и юристами.',
+        },
+        tour3: {
+          title: 'Тур "Премиум виллы"',
+          description: 'Эксклюзивный показ премиальных вилл в Лимассоле и Пафосе.',
+        },
+      },
+      tripsList: {
+        trip1: {
+          title: 'Кипр: отдых + недвижимость',
+          description: 'Комбинированный тур: 7 дней отдыха на море + 3 дня просмотра недвижимости.',
+          locations: ['Лимассол', 'Пафос', 'Ларнака'],
+        },
+        trip2: {
+          title: 'Семейный Кипр',
+          description: 'Идеально для семей с детьми. Пляжный отдых и знакомство с рынком недвижимости.',
+          locations: ['Айя-Напа', 'Протарас', 'Лимассол'],
+        },
+      },
     },
   },
   en: {
@@ -259,6 +285,32 @@ const resources = {
         apartmentPaphos: 'Apartment in Paphos',
         villaPolis: 'Villa in Polis',
         apartmentLarnaca: 'Apartment in Larnaca',
+      },
+      toursList: {
+        tour1: {
+          title: 'Tour "Discover Cyprus"',
+          description: 'Visit Limassol, Paphos and Larnaca. View 10-15 properties.',
+        },
+        tour2: {
+          title: 'Tour "Real Estate Investments"',
+          description: 'Deep dive into investment opportunities. Meetings with developers and lawyers.',
+        },
+        tour3: {
+          title: 'Tour "Premium Villas"',
+          description: 'Exclusive showing of premium villas in Limassol and Paphos.',
+        },
+      },
+      tripsList: {
+        trip1: {
+          title: 'Cyprus: Vacation + Real Estate',
+          description: 'Combined tour: 7 days beach vacation + 3 days property viewing.',
+          locations: ['Limassol', 'Paphos', 'Larnaca'],
+        },
+        trip2: {
+          title: 'Family Cyprus',
+          description: 'Perfect for families with children. Beach vacation and real estate market introduction.',
+          locations: ['Ayia Napa', 'Protaras', 'Limassol'],
+        },
       },
     },
   },
