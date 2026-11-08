@@ -16,31 +16,31 @@ export default function PropertyCard({ title, price, beds, baths, area, image, b
   const { t } = useTranslation();
 
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-elevated transition-shadow">
-      <div className="relative h-48">
+    <div className="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-1 group">
+      <div className="relative h-40 sm:h-48">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         {badge && (
-          <div className="absolute top-4 left-4 bg-cyprus-navy text-white px-3 py-1 rounded-full text-sm font-medium">
+          <div className="absolute top-3 left-3 bg-cyprus-navy text-white px-2.5 py-1 rounded-full text-xs sm:text-sm font-medium">
             {badge}
           </div>
         )}
-        <button className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
-          <Heart className="w-4 h-4 text-gray-600" />
+        <button className="absolute top-3 right-3 w-7 h-7 sm:w-8 sm:h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600" />
         </button>
       </div>
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         <div className="flex items-baseline gap-2 mb-2">
-          <span className="text-2xl font-bold text-cyprus-navy">
+          <span className="text-xl sm:text-2xl font-bold text-cyprus-navy">
             {t('common.euro')} {price.toLocaleString()}
           </span>
         </div>
-        <h3 className="font-medium text-gray-800 mb-4">{title}</h3>
-        <div className="flex items-center justify-between text-sm text-gray-600">
-          <div className="flex items-center gap-3">
+        <h3 className="font-medium text-gray-800 mb-3 sm:mb-4 text-sm sm:text-base">{title}</h3>
+        <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="flex items-center gap-1">
               <span>🛏️</span> {beds}
             </span>
@@ -51,8 +51,8 @@ export default function PropertyCard({ title, price, beds, baths, area, image, b
               <span>📐</span> {area} {t('featured.area')}
             </span>
           </div>
-          <button className="w-8 h-8 bg-cyprus-sand rounded-full flex items-center justify-center hover:bg-cyprus-orange hover:text-white transition-colors">
-            <ArrowRight className="w-4 h-4" />
+          <button className="w-7 h-7 sm:w-8 sm:h-8 bg-cyprus-sand rounded-full flex items-center justify-center hover:bg-cyprus-orange hover:text-white transition-colors">
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         </div>
       </div>

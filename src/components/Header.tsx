@@ -16,7 +16,6 @@ export default function Header() {
     { path: '/real-estate', label: t('nav.realEstate') },
     { path: '/tours', label: t('tours.title') },
     { path: '/trips', label: t('trips.title') },
-    { path: '/excursions', label: t('excursions.title') },
     { path: '/about', label: t('nav.aboutCompany') },
     { path: '/contacts', label: t('nav.contacts') },
   ];

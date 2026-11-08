@@ -66,15 +66,15 @@ const resources = {
         learnMore: 'Узнать больше',
       },
       tours: {
-        title: 'Туры для выбора недвижимости',
-        subtitle: 'Посетите Кипр и выберите свой идеальный объект',
+        title: 'Брокерский тур на Кипр',
+        subtitle: 'Посетите Кипр и выберите свой идеальный объект с нашим брокером',
         duration: 'дней',
         price: 'от',
         book: 'Забронировать',
       },
       trips: {
-        title: 'Поездки на Кипр',
-        subtitle: 'Комбинированные туры: отдых + просмотр недвижимости',
+        title: 'Экскурсии на Кипр',
+        subtitle: 'Откройте для себя красоты Кипра с нашими экскурсиями',
       },
       excursions: {
         title: 'Экскурсии',
@@ -109,6 +109,26 @@ const resources = {
         euro: '€',
         readMore: 'Читать далее',
         back: 'Назад',
+      },
+      banners: {
+        excursionTours: {
+          title: 'Экскурсионные туры на Кипр',
+          subtitle: 'Откройте для себя историю и культуру острова',
+          description: 'Древние города, живописные монастыри, традиционные деревни',
+          cta: 'Выбрать тур',
+        },
+        brokerTour: {
+          title: 'Брокерский тур на Кипр',
+          subtitle: 'Подбор недвижимости с экспертом',
+          description: '5 дней просмотра объектов с личным брокером',
+          cta: 'Забронировать тур',
+        },
+      },
+      propertyCards: {
+        villaLimassol: 'Вилла в Лимассоле',
+        apartmentPaphos: 'Апартаменты в Пафосе',
+        villaPolis: 'Вилла в Полисе',
+        apartmentLarnaca: 'Апартаменты в Ларнаке',
       },
     },
   },
@@ -176,15 +196,15 @@ const resources = {
         learnMore: 'Learn more',
       },
       tours: {
-        title: 'Property Selection Tours',
-        subtitle: 'Visit Cyprus and choose your perfect property',
+        title: 'Broker Tour to Cyprus',
+        subtitle: 'Visit Cyprus and choose your perfect property with our broker',
         duration: 'days',
         price: 'from',
         book: 'Book',
       },
       trips: {
-        title: 'Trips to Cyprus',
-        subtitle: 'Combined tours: vacation + property viewing',
+        title: 'Cyprus Excursions',
+        subtitle: 'Discover the beauty of Cyprus with our excursions',
       },
       excursions: {
         title: 'Excursions',
@@ -219,6 +239,26 @@ const resources = {
         euro: '€',
         readMore: 'Read more',
         back: 'Back',
+      },
+      banners: {
+        excursionTours: {
+          title: 'Excursion Tours in Cyprus',
+          subtitle: 'Discover the history and culture of the island',
+          description: 'Ancient cities, picturesque monasteries, traditional villages',
+          cta: 'Choose tour',
+        },
+        brokerTour: {
+          title: 'Broker Tour to Cyprus',
+          subtitle: 'Property selection with an expert',
+          description: '5 days of property viewing with a personal broker',
+          cta: 'Book tour',
+        },
+      },
+      propertyCards: {
+        villaLimassol: 'Villa in Limassol',
+        apartmentPaphos: 'Apartment in Paphos',
+        villaPolis: 'Villa in Polis',
+        apartmentLarnaca: 'Apartment in Larnaca',
       },
     },
   },

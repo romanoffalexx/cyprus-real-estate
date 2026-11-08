@@ -31,7 +31,6 @@ export default function Footer() {
               <li><Link to="/real-estate" className="hover:text-white transition-colors">{t('nav.realEstate')}</Link></li>
               <li><Link to="/tours" className="hover:text-white transition-colors">{t('tours.title')}</Link></li>
               <li><Link to="/trips" className="hover:text-white transition-colors">{t('trips.title')}</Link></li>
-              <li><Link to="/excursions" className="hover:text-white transition-colors">{t('excursions.title')}</Link></li>
             </ul>
           </div>
 
