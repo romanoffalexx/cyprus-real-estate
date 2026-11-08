@@ -14,8 +14,8 @@ export default function Header() {
 
   const navItems = [
     { path: '/real-estate', label: t('nav.realEstate') },
-    { path: '/tours', label: t('tours.title') },
-    { path: '/trips', label: t('trips.title') },
+    { path: '/tours', label: t('nav.brokerTour') },
+    { path: '/trips', label: t('nav.cyprusExcursions') },
     { path: '/about', label: t('nav.aboutCompany') },
     { path: '/contacts', label: t('nav.contacts') },
   ];
@@ -36,13 +36,13 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2">
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `transition-colors font-medium px-3 py-2 rounded-lg ${
+                  `transition-colors font-medium px-3 py-2 rounded-lg text-sm whitespace-nowrap ${
                     isActive
                       ? 'text-cyprus-orange bg-cyprus-sand'
                       : 'text-gray-700 hover:text-cyprus-navy hover:bg-cyprus-sand'
@@ -56,9 +56,9 @@ export default function Header() {
 
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+35799123456" className="flex items-center gap-2 text-cyprus-navy hover:text-cyprus-orange transition-colors" aria-label="Call us">
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              <span className="font-medium">+357 99 123 456</span>
+            <a href="tel:+35799123456" className="flex items-center gap-2 text-cyprus-navy hover:text-cyprus-orange transition-colors whitespace-nowrap" aria-label="Call us">
+              <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="font-medium text-sm">+357 99 123 456</span>
             </a>
             <button
               onClick={toggleLanguage}
@@ -69,7 +69,7 @@ export default function Header() {
             </button>
             <Link
               to="/contacts"
-              className="bg-cyprus-orange text-white px-6 py-2 rounded-lg hover:bg-cyprus-orange/90 transition-colors font-medium"
+              className="bg-cyprus-orange text-white px-5 py-2 rounded-lg hover:bg-cyprus-orange/90 transition-colors font-medium text-sm whitespace-nowrap"
             >
               {t('nav.request')}
             </Link>

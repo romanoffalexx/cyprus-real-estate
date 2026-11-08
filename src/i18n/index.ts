@@ -11,6 +11,8 @@ const resources = {
         aboutCompany: 'О компании',
         contacts: 'Контакты',
         request: 'Оставить заявку',
+        brokerTour: 'Брокерский тур',
+        cyprusExcursions: 'Экскурсии',
       },
       hero: {
         title: 'Недвижимость на Кипре',
@@ -167,6 +169,8 @@ const resources = {
         aboutCompany: 'About Us',
         contacts: 'Contacts',
         request: 'Request',
+        brokerTour: 'Broker Tour',
+        cyprusExcursions: 'Excursions',
       },
       hero: {
         title: 'Real Estate in Cyprus',
