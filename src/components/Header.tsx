@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Phone } from 'lucide-react';
 
@@ -36,27 +36,34 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-2">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.path}
                 to={item.path}
-                className="text-gray-700 hover:text-cyprus-navy transition-colors font-medium"
+                className={({ isActive }) =>
+                  `transition-colors font-medium px-3 py-2 rounded-lg ${
+                    isActive
+                      ? 'text-cyprus-orange bg-cyprus-sand'
+                      : 'text-gray-700 hover:text-cyprus-navy hover:bg-cyprus-sand'
+                  }`
+                }
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
 
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+35799123456" className="flex items-center gap-2 text-cyprus-navy">
-              <Phone className="w-4 h-4" />
+            <a href="tel:+35799123456" className="flex items-center gap-2 text-cyprus-navy hover:text-cyprus-orange transition-colors" aria-label="Call us">
+              <Phone className="w-4 h-4" aria-hidden="true" />
               <span className="font-medium">+357 99 123 456</span>
             </a>
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1 border border-cyprus-navy text-cyprus-navy rounded hover:bg-cyprus-navy hover:text-white transition-colors font-medium"
+              className="px-3 py-1 border border-cyprus-navy text-cyprus-navy rounded hover:bg-cyprus-navy hover:text-white transition-colors font-medium focus-visible:ring-2 focus-visible:ring-cyprus-navy focus-visible:ring-offset-2 focus-visible:outline-none"
+              aria-label={`Switch language to ${i18n.language === 'ru' ? 'English' : 'Русский'}`}
             >
               {i18n.language === 'ru' ? 'EN' : 'RU'}
             </button>
@@ -70,36 +77,45 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 focus-visible:ring-2 focus-visible:ring-cyprus-navy focus-visible:ring-offset-2 focus-visible:outline-none rounded"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t">
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <Link
+                <NavLink
                   key={item.path}
                   to={item.path}
-                  className="text-gray-700 hover:text-cyprus-navy transition-colors font-medium"
+                  className={({ isActive }) =>
+                    `transition-colors font-medium px-3 py-2 rounded-lg ${
+                      isActive
+                        ? 'text-cyprus-orange bg-cyprus-sand'
+                        : 'text-gray-700 hover:text-cyprus-navy hover:bg-cyprus-sand'
+                    }`
+                  }
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               ))}
               <div className="flex items-center gap-4 pt-4 border-t">
                 <button
                   onClick={toggleLanguage}
-                  className="px-3 py-1 border border-cyprus-navy text-cyprus-navy rounded hover:bg-cyprus-navy hover:text-white transition-colors font-medium"
+                  className="px-3 py-1 border border-cyprus-navy text-cyprus-navy rounded hover:bg-cyprus-navy hover:text-white transition-colors font-medium focus-visible:ring-2 focus-visible:ring-cyprus-navy focus-visible:ring-offset-2 focus-visible:outline-none"
+                  aria-label={`Switch language to ${i18n.language === 'ru' ? 'English' : 'Русский'}`}
                 >
                   {i18n.language === 'ru' ? 'EN' : 'RU'}
                 </button>
-                <a href="tel:+35799123456" className="flex items-center gap-2 text-cyprus-navy">
-                  <Phone className="w-4 h-4" />
+                <a href="tel:+35799123456" className="flex items-center gap-2 text-cyprus-navy hover:text-cyprus-orange transition-colors" aria-label="Call us">
+                  <Phone className="w-4 h-4" aria-hidden="true" />
                   <span className="font-medium">+357 99 123 456</span>
                 </a>
               </div>

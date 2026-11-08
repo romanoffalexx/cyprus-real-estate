@@ -62,7 +62,9 @@ export default function HomePage() {
           <img
             src="/images/hero.jpg"
             alt="Cyprus villa"
-            className="w-full h-full object-cover scale-105 animate-slow-zoom"
+            className="w-full h-full object-cover scale-105 animate-slow-zoom motion-reduce:animate-none"
+            width="1920"
+            height="1080"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-cyprus-navy/85 to-cyprus-navy/50" />
         </div>
@@ -91,16 +93,16 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3 md:gap-4 animate-fade-in-up animation-delay-600">
               <Link
                 to="/real-estate"
-                className="bg-cyprus-orange text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-all hover:scale-105 font-medium inline-flex items-center gap-2 shadow-lg"
+                className="bg-cyprus-orange text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-transform hover:scale-105 font-medium inline-flex items-center gap-2 shadow-lg focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 {t('hero.findProperty')}
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </Link>
               <Link
                 to="/about"
-                className="bg-white/20 backdrop-blur text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-white/30 transition-all hover:scale-105 font-medium inline-flex items-center gap-2 border border-white/30"
+                className="bg-white/20 backdrop-blur text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-white/30 transition-colors hover:scale-105 font-medium inline-flex items-center gap-2 border border-white/30 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:outline-none"
               >
-                <Play className="w-4 h-4 md:w-5 md:h-5" />
+                <Play className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
                 {t('hero.learnMore')}
               </Link>
             </div>
@@ -113,8 +115,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             <div className="relative">
-              <Home className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <select className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-cyprus-navy text-sm md:text-base">
+              <label htmlFor="property-type" className="sr-only">{t('filter.type')}</label>
+              <Home className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
+              <select
+                id="property-type"
+                className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-cyprus-navy text-sm md:text-base"
+              >
                 <option>{t('filter.type')}: {t('filter.any')}</option>
                 <option>{t('propertyTypes.villa')}</option>
                 <option>{t('propertyTypes.apartment')}</option>
@@ -122,8 +128,12 @@ export default function HomePage() {
               </select>
             </div>
             <div className="relative">
-              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <select className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-cyprus-navy text-sm md:text-base">
+              <label htmlFor="region" className="sr-only">{t('filter.region')}</label>
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
+              <select
+                id="region"
+                className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-cyprus-navy text-sm md:text-base"
+              >
                 <option>{t('filter.region')}: {t('filter.allRegions')}</option>
                 <option>{t('regions.limassol')}</option>
                 <option>{t('regions.paphos')}</option>
@@ -132,16 +142,23 @@ export default function HomePage() {
               </select>
             </div>
             <div className="relative">
-              <Coins className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <select className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-cyprus-navy text-sm md:text-base">
+              <label htmlFor="price" className="sr-only">{t('filter.priceFrom')}</label>
+              <Coins className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
+              <select
+                id="price"
+                className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-cyprus-navy text-sm md:text-base"
+              >
                 <option>{t('filter.priceFrom')}: {t('filter.any_price')}</option>
                 <option>€200,000</option>
                 <option>€400,000</option>
                 <option>€600,000</option>
               </select>
             </div>
-            <button className="bg-cyprus-navy text-white px-6 py-2.5 md:py-3 rounded-lg hover:bg-cyprus-navy/90 transition-all hover:scale-105 font-medium inline-flex items-center justify-center gap-2 text-sm md:text-base">
-              <span>🔍</span>
+            <button
+              className="bg-cyprus-navy text-white px-6 py-2.5 md:py-3 rounded-lg hover:bg-cyprus-navy/90 transition-transform hover:scale-105 font-medium inline-flex items-center justify-center gap-2 text-sm md:text-base focus-visible:ring-2 focus-visible:ring-cyprus-navy focus-visible:ring-offset-2 focus-visible:outline-none"
+              aria-label={t('filter.search')}
+            >
+              <span aria-hidden="true">🔍</span>
               {t('filter.search')}
             </button>
           </div>
@@ -153,18 +170,23 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Excursion Tours Banner */}
-            <Link to="/trips" className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <Link
+              to="/trips"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-2 transform focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
               <div className="absolute inset-0">
                 <img
                   src="/images/cyprus-coast.jpg"
                   alt="Cyprus excursions"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 motion-reduce:group-hover:scale-100"
+                  width="800"
+                  height="600"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-cyprus-navy/90 via-cyprus-navy/50 to-transparent" />
               </div>
               <div className="relative p-6 md:p-8 h-64 md:h-72 flex flex-col justify-end text-white">
                 <div className="flex items-center gap-2 mb-3">
-                  <Compass className="w-6 h-6 text-cyprus-orange" />
+                  <Compass className="w-6 h-6 text-cyprus-orange" aria-hidden="true" />
                   <span className="text-xs md:text-sm font-medium text-cyprus-orange uppercase tracking-wider">
                     {t('trips.title')}
                   </span>
@@ -177,24 +199,29 @@ export default function HomePage() {
                 </p>
                 <div className="inline-flex items-center gap-2 text-cyprus-orange font-medium group-hover:gap-3 transition-all">
                   {t('banners.excursionTours.cta')}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </div>
               </div>
             </Link>
 
             {/* Broker Tour Banner */}
-            <Link to="/tours" className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <Link
+              to="/tours"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-2 transform focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
               <div className="absolute inset-0">
                 <img
                   src="/images/cyprus-tour.jpg"
                   alt="Broker tour"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 motion-reduce:group-hover:scale-100"
+                  width="800"
+                  height="600"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-cyprus-navy/90 via-cyprus-navy/50 to-transparent" />
               </div>
               <div className="relative p-6 md:p-8 h-64 md:h-72 flex flex-col justify-end text-white">
                 <div className="flex items-center gap-2 mb-3">
-                  <UserCheck className="w-6 h-6 text-cyprus-orange" />
+                  <UserCheck className="w-6 h-6 text-cyprus-orange" aria-hidden="true" />
                   <span className="text-xs md:text-sm font-medium text-cyprus-orange uppercase tracking-wider">
                     {t('tours.title')}
                   </span>
@@ -207,7 +234,7 @@ export default function HomePage() {
                 </p>
                 <div className="inline-flex items-center gap-2 text-cyprus-orange font-medium group-hover:gap-3 transition-all">
                   {t('banners.brokerTour.cta')}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </div>
               </div>
             </Link>
@@ -222,9 +249,12 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyprus-navy">
               {t('featured.title')}
             </h2>
-            <Link to="/real-estate" className="text-cyprus-orange hover:text-cyprus-orange/80 transition-colors font-medium inline-flex items-center gap-2">
+            <Link
+              to="/real-estate"
+              className="text-cyprus-orange hover:text-cyprus-orange/80 transition-colors font-medium inline-flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none rounded"
+            >
               {t('featured.viewAll')}
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -258,8 +288,10 @@ export default function HomePage() {
                 src="/images/cyprus-coast.jpg"
                 alt="Cyprus coast"
                 className="rounded-2xl shadow-lg w-full group-hover:shadow-2xl transition-shadow duration-500"
+                width="800"
+                height="600"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-cyprus-navy/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-cyprus-navy/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 motion-reduce:opacity-0" />
             </div>
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyprus-navy mb-4">
@@ -273,10 +305,10 @@ export default function HomePage() {
               </p>
               <Link
                 to="/about"
-                className="bg-cyprus-orange text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-all hover:scale-105 font-medium inline-flex items-center gap-2 shadow-lg"
+                className="bg-cyprus-orange text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-transform hover:scale-105 font-medium inline-flex items-center gap-2 shadow-lg focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 {t('about.learnMore')}
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
               </Link>
             </div>
           </div>

@@ -43,22 +43,22 @@ export default function ToursPage() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {tours.map((tour) => (
-            <div key={tour.id} className="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-1 group">
-              <img src={tour.image} alt={tour.title} className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div key={tour.id} className="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-elevated transition-shadow transform hover:-translate-y-1 group">
+              <img src={tour.image} alt={tour.title} className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" />
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-cyprus-navy mb-2 sm:mb-3">{tour.title}</h3>
                 <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{tour.description}</p>
                 <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm text-gray-600">
                   <span className="flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {tour.duration} {t('tours.duration')}
+                    <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" /> {tour.duration} {t('tours.duration')}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Euro className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {t('tours.price')} €{tour.price}
+                    <Euro className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" /> {t('tours.price')} €{tour.price}
                   </span>
                 </div>
                 <Link
                   to="/contacts"
-                  className="block w-full bg-cyprus-orange text-white text-center py-2.5 sm:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-all hover:scale-105 font-medium text-sm sm:text-base"
+                  className="block w-full bg-cyprus-orange text-white text-center py-2.5 sm:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-transform hover:scale-105 font-medium text-sm sm:text-base focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   {t('tours.book')}
                 </Link>
