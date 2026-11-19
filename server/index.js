@@ -320,6 +320,12 @@ async function handleLeadCreate(req, res) {
 /* ---------- http ---------- */
 
 function json(res, status, payload) {
+  // После sendFile заголовки уже могли уйти клиенту, а second-write кидает
+  // ERR_HTTP_HEADERS_SENT и роняет процесс целиком.
+  if (res.headersSent) {
+    res.end();
+    return;
+  }
   const body = JSON.stringify(payload);
   res.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
@@ -330,8 +336,14 @@ function json(res, status, payload) {
   res.end(body);
 }
 
+// Каталог — не файл: stat проходит, а readFile падает на EISDIR уже после заголовков.
+const NOT_FILE_CODES = new Set(['ENOENT', 'ENOTDIR', 'EISDIR']);
+const isMissingFile = (error) =>
+  error instanceof HttpError ? error.status === 404 : NOT_FILE_CODES.has(error.code);
+
 async function sendFile(res, absolutePath, cacheControl, isHead) {
   const info = await stat(absolutePath);
+  if (!info.isFile()) throw new HttpError(404, 'Файл не найден');
   res.writeHead(200, {
     'Content-Type': MIME_TYPES[path.extname(absolutePath)] || 'application/octet-stream',
     'Content-Length': info.size,
@@ -439,7 +451,7 @@ async function handleUploads(req, res, url) {
   try {
     await sendFile(res, target, 'public, max-age=31536000, immutable', req.method === 'HEAD');
   } catch (error) {
-    if (error.code === 'ENOENT') throw new HttpError(404, 'Файл не найден');
+    if (isMissingFile(error)) throw new HttpError(404, 'Файл не найден');
     throw error;
   }
 }
@@ -452,14 +464,14 @@ async function handleStatic(req, res, url) {
       await sendFile(res, target, 'public, max-age=3600', isHead);
       return;
     } catch (error) {
-      if (error.code !== 'ENOENT') throw error;
+      if (!isMissingFile(error)) throw error;
     }
   }
   const entry = path.join(DIST_DIR, 'index.html');
   try {
     await sendFile(res, entry, 'no-cache', isHead);
   } catch (error) {
-    if (error.code === 'ENOENT') throw new HttpError(503, 'Сайт не собран: нет dist/index.html');
+    if (isMissingFile(error)) throw new HttpError(503, 'Сайт не собран: нет dist/index.html');
     throw error;
   }
 }
