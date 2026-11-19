@@ -56,6 +56,16 @@ export function propertyImage(property: Property): string {
   return property.images[0] ?? '/images/hero.jpg';
 }
 
+export function developerOptions(items: Property[]): string[] {
+  const names = items.map((item) => item.developer).filter(Boolean);
+  return [...new Set(names)].sort((a, b) => a.localeCompare(b, 'ru'));
+}
+
+export function filterByDeveloper(items: Property[], developer: string): Property[] {
+  if (!developer) return items;
+  return items.filter((item) => item.developer === developer);
+}
+
 export function emptyProperty(): Property {
   return {
     slug: '',

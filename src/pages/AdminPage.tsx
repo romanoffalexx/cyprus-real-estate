@@ -1,8 +1,14 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Edit, Plus, Trash2 } from 'lucide-react';
+import { Building2, Edit, Plus, Trash2 } from 'lucide-react';
 import PropertyEditor from '../components/admin/PropertyEditor';
-import { emptyProperty, type Lead, type Property } from '../lib/properties';
+import {
+  developerOptions,
+  emptyProperty,
+  filterByDeveloper,
+  type Lead,
+  type Property,
+} from '../lib/properties';
 import {
   ApiError,
   deleteLead,
@@ -23,9 +29,16 @@ export default function AdminPage() {
   const [properties, setProperties] = useState<Property[]>([]);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [tab, setTab] = useState<'properties' | 'leads'>('properties');
+  const [developer, setDeveloper] = useState('');
   const [draft, setDraft] = useState<{ property: Property; isNew: boolean } | null>(null);
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
+
+  const developers = useMemo(() => developerOptions(properties), [properties]);
+  const shownProperties = useMemo(
+    () => filterByDeveloper(properties, developer),
+    [properties, developer],
+  );
 
   const refresh = useCallback(async () => {
     const [items, applications] = await Promise.all([listProperties(), listLeads()]);
@@ -79,6 +92,8 @@ export default function AdminPage() {
     await guard(async () => {
       await saveProperty(property);
       await refresh();
+      // Иначе только что сохранённый проект исчезнет из отфильтрованного списка.
+      if (developer && property.developer !== developer) setDeveloper('');
       setDraft(null);
       setNotice(t('admin.saved'));
     });
@@ -216,57 +231,92 @@ export default function AdminPage() {
                 <Plus className="w-5 h-5" aria-hidden="true" />
                 {t('admin.addProperty')}
               </button>
-              <ul className="space-y-2">
-                {properties.map((property) => (
-                  <li
-                    key={property.slug}
-                    className="flex flex-wrap items-center gap-3 bg-white rounded-lg shadow-card p-3 sm:p-4"
-                  >
-                    <img
-                      src={property.images[0] ?? '/images/hero.jpg'}
-                      alt=""
-                      className="w-12 h-12 rounded object-cover shrink-0"
-                      width="48"
-                      height="48"
-                      loading="lazy"
+              {developers.length > 1 && (
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="relative">
+                    <label htmlFor="admin-developer" className="sr-only">
+                      {t('filter.developer')}
+                    </label>
+                    <Building2
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                      aria-hidden="true"
                     />
-                    <div className="min-w-0 flex-1">
-                      <p className="font-medium text-cyprus-navy truncate">{property.name}</p>
-                      <p className="text-xs text-gray-500 truncate">/real-estate/{property.slug}</p>
-                    </div>
-                    <span
-                      className={`text-xs px-2 py-1 rounded-full ${
-                        property.published
-                          ? 'bg-green-100 text-green-800'
-                          : 'bg-gray-200 text-gray-700'
-                      }`}
+                    <select
+                      id="admin-developer"
+                      value={developer}
+                      onChange={(event) => setDeveloper(event.target.value)}
+                      className="pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg appearance-none bg-white text-sm text-cyprus-navy focus:outline-none focus:ring-2 focus:ring-cyprus-navy"
                     >
-                      {property.published ? t('admin.published') : t('admin.hidden')}
-                    </span>
-                    <input
-                      type="checkbox"
-                      checked={property.published}
-                      onChange={() => togglePublished(property)}
-                      aria-label={property.published ? t('admin.published') : t('admin.hidden')}
-                      className="w-4 h-4 text-cyprus-navy border-gray-300 rounded focus:ring-cyprus-navy"
-                    />
-                    <button
-                      onClick={() => setDraft({ property, isNew: false })}
-                      aria-label={t('admin.editProperty')}
-                      className="p-2 text-blue-600 hover:bg-blue-50 rounded focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
+                      <option value="">{t('filter.anyDeveloper')}</option>
+                      {developers.map((name) => (
+                        <option key={name} value={name}>
+                          {name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  {developer && (
+                    <p className="text-sm text-gray-600">
+                      {shownProperties.length} / {properties.length}
+                    </p>
+                  )}
+                </div>
+              )}
+              {shownProperties.length === 0 ? (
+                <p className="text-cyprus-navy/70">{t('filter.noMatches')}</p>
+              ) : (
+                <ul className="space-y-2">
+                  {shownProperties.map((property) => (
+                    <li
+                      key={property.slug}
+                      className="flex flex-wrap items-center gap-3 bg-white rounded-lg shadow-card p-3 sm:p-4"
                     >
-                      <Edit className="w-5 h-5" aria-hidden="true" />
-                    </button>
-                    <button
-                      onClick={() => removeProperty(property)}
-                      aria-label={t('admin.delete')}
-                      className="p-2 text-red-600 hover:bg-red-50 rounded focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none"
-                    >
-                      <Trash2 className="w-5 h-5" aria-hidden="true" />
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                      <img
+                        src={property.images[0] ?? '/images/hero.jpg'}
+                        alt=""
+                        className="w-12 h-12 rounded object-cover shrink-0"
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="font-medium text-cyprus-navy truncate">{property.name}</p>
+                        <p className="text-xs text-gray-500 truncate">/real-estate/{property.slug}</p>
+                      </div>
+                      <span
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          property.published
+                            ? 'bg-green-100 text-green-800'
+                            : 'bg-gray-200 text-gray-700'
+                        }`}
+                      >
+                        {property.published ? t('admin.published') : t('admin.hidden')}
+                      </span>
+                      <input
+                        type="checkbox"
+                        checked={property.published}
+                        onChange={() => togglePublished(property)}
+                        aria-label={property.published ? t('admin.published') : t('admin.hidden')}
+                        className="w-4 h-4 text-cyprus-navy border-gray-300 rounded focus:ring-cyprus-navy"
+                      />
+                      <button
+                        onClick={() => setDraft({ property, isNew: false })}
+                        aria-label={t('admin.editProperty')}
+                        className="p-2 text-blue-600 hover:bg-blue-50 rounded focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
+                      >
+                        <Edit className="w-5 h-5" aria-hidden="true" />
+                      </button>
+                      <button
+                        onClick={() => removeProperty(property)}
+                        aria-label={t('admin.delete')}
+                        className="p-2 text-red-600 hover:bg-red-50 rounded focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none"
+                      >
+                        <Trash2 className="w-5 h-5" aria-hidden="true" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
 

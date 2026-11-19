@@ -31,6 +31,10 @@ const resources = {
         priceTo: 'Цена до',
         any_price: 'Любая',
         search: 'Найти',
+        developer: 'Застройщик',
+        anyDeveloper: 'Все застройщики',
+        noMatches: 'По этому фильтру ничего не найдено.',
+        reset: 'Сбросить фильтр',
       },
       propertyTypes: {
         villa: 'Вилла',
@@ -299,6 +303,10 @@ const resources = {
         priceTo: 'Price to',
         any_price: 'Any',
         search: 'Search',
+        developer: 'Developer',
+        anyDeveloper: 'All developers',
+        noMatches: 'Nothing matches this filter.',
+        reset: 'Reset filter',
       },
       propertyTypes: {
         villa: 'Villa',
