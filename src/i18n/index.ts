@@ -139,7 +139,8 @@ const resources = {
         email: 'Email',
         message: 'Сообщение',
         send: 'Отправить',
-        consent: 'Я согласен на обработку персональных данных',
+        consentStart: 'Я согласен на обработку',
+        consentLink: 'персональных данных',
       },
       cookie: {
         message: 'Мы используем файлы cookie для улучшения работы сайта',
@@ -410,7 +411,8 @@ const resources = {
         email: 'Email',
         message: 'Message',
         send: 'Send',
-        consent: 'I agree to the processing of personal data',
+        consentStart: 'I agree to the processing of',
+        consentLink: 'personal data',
       },
       cookie: {
         message: 'We use cookies to improve site performance',

@@ -392,9 +392,18 @@ function PropertyView({ slug }: { slug: string }) {
                   onChange={(event) => setForm({ ...form, consent: event.target.checked })}
                   className="mt-1 w-4 h-4 text-cyprus-navy border-gray-300 rounded focus:ring-cyprus-navy"
                 />
-                <label htmlFor="lead-consent" className="text-sm text-gray-600">
-                  {t('contact.consent')} *
-                </label>
+                <span className="text-sm text-gray-600">
+                  <label htmlFor="lead-consent" className="cursor-pointer">
+                    {t('contact.consentStart')}{' '}
+                  </label>
+                  <Link
+                    to="/privacy"
+                    className="text-cyprus-navy underline decoration-cyprus-navy/40 underline-offset-2 hover:decoration-cyprus-navy focus-visible:ring-2 focus-visible:ring-cyprus-navy focus-visible:ring-offset-2 focus-visible:outline-none rounded"
+                  >
+                    {t('contact.consentLink')}
+                  </Link>{' '}
+                  *
+                </span>
               </div>
               <div className="hidden" aria-hidden="true">
                 <label htmlFor="lead-website">Website</label>
