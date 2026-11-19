@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import RealEstatePage from './pages/RealEstatePage';
 import PropertyPage from './pages/PropertyPage';
 import TripsPage from './pages/TripsPage';
+import PearlTourPage from './pages/PearlTourPage';
 import ExcursionsPage from './pages/ExcursionsPage';
 import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
@@ -23,6 +24,7 @@ function App() {
             <Route path="real-estate/:slug" element={<PropertyPage />} />
             <Route path="tours" element={<Navigate to="/trips" replace />} />
             <Route path="trips" element={<TripsPage />} />
+            <Route path="trips/pearl" element={<PearlTourPage />} />
             <Route path="excursions" element={<ExcursionsPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contacts" element={<ContactsPage />} />

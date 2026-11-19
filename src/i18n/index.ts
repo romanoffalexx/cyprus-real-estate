@@ -83,7 +83,6 @@ const resources = {
         description: 'Тур по Северному Кипру с вылетом из Праги: Кирения и Фамагуста, город-призрак Вароша, аббатство Беллапаис и мыс Карпас.',
         locations: ['Кирения', 'Никосия', 'Фамагуста', 'Карпас'],
         details: 'Подробнее о туре',
-        detailsHide: 'Свернуть программу',
         programTitle: 'Программа тура по дням',
         days: [
           'Вылет из Праги в Ларнаку. Трансфер на Северный Кипр в отель 5* или апартаменты, заселение. Свободное время. Ночь в отеле.',
@@ -113,7 +112,7 @@ const resources = {
         datesTitle: 'Даты заездов',
         datesNote: 'Еженедельные заезды: 26.03 — 03.11.2027',
         priceTitle: 'Стоимость',
-        priceNote: 'Стоимость рассчитывается индивидуально, в зависимости от сезона и выбранных условий проживания.',
+        priceNote: 'Рассчитывается индивидуально, в зависимости от сезона и выбранных условий проживания.',
         individualTitle: 'Возможны индивидуальные туры',
         individualNote: 'Любые даты и любое количество дней.',
         disclaimer: 'Фирма оставляет за собой право менять экскурсии, сохраняя программу тура в целом. Данная публикация не является публичной офертой.',
@@ -355,7 +354,6 @@ const resources = {
         description: 'A Northern Cyprus tour departing from Prague: Kyrenia and Famagusta, the ghost city of Varosha, Bellapais Abbey and Cape Karpas.',
         locations: ['Kyrenia', 'Nicosia', 'Famagusta', 'Karpas'],
         details: 'Tour details',
-        detailsHide: 'Hide program',
         programTitle: 'Day-by-day program',
         days: [
           'Flight from Prague to Larnaca. Transfer to Northern Cyprus, check-in at a 5* hotel or apartments. Free time. Overnight at the hotel.',
@@ -385,7 +383,7 @@ const resources = {
         datesTitle: 'Departure dates',
         datesNote: 'Weekly departures: 26.03 — 03.11.2027',
         priceTitle: 'Price',
-        priceNote: 'The price is quoted individually, depending on the season and the accommodation you choose.',
+        priceNote: 'Quoted individually, depending on the season and the accommodation you choose.',
         individualTitle: 'Private tours available',
         individualNote: 'Any dates, any duration.',
         disclaimer: 'The company reserves the right to change excursions while keeping the overall tour program intact. This publication is not a public offer.',
