@@ -33,7 +33,7 @@ export default function ExcursionsPage() {
                   to="/contacts"
                   className="block w-full bg-cyprus-orange text-white text-center py-2.5 sm:py-3 rounded-lg hover:bg-cyprus-orange/90 transition-transform hover:scale-105 font-medium text-sm sm:text-base focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
-                  {t('tours.book')}
+                  {t('trips.book')}
                 </Link>
               </div>
             </div>

@@ -29,7 +29,6 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><Link to="/real-estate" className="hover:text-white transition-colors">{t('nav.realEstate')}</Link></li>
-              <li><Link to="/tours" className="hover:text-white transition-colors">{t('tours.title')}</Link></li>
               <li><Link to="/trips" className="hover:text-white transition-colors">{t('trips.title')}</Link></li>
             </ul>
           </div>

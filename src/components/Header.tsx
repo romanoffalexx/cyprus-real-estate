@@ -14,8 +14,7 @@ export default function Header() {
 
   const navItems = [
     { path: '/real-estate', label: t('nav.realEstate') },
-    { path: '/tours', label: t('nav.brokerTour') },
-    { path: '/trips', label: t('nav.cyprusExcursions') },
+    { path: '/trips', label: t('nav.tours') },
     { path: '/about', label: t('nav.aboutCompany') },
     { path: '/contacts', label: t('nav.contacts') },
   ];
