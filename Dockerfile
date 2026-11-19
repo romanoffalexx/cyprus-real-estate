@@ -12,11 +12,16 @@ FROM node:20-alpine AS production
 
 WORKDIR /app
 
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/package*.json ./
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV DATA_DIR=/app/storage
 
-RUN npm ci --only=production
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/server ./server
+COPY --from=build /app/data ./data
+
+RUN mkdir -p /app/storage
 
 EXPOSE 3000
 
-CMD ["npx", "serve", "dist", "-l", "3000"]
+CMD ["node", "server/index.js"]

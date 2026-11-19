@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import RealEstatePage from './pages/RealEstatePage';
-import ToursPage from './pages/ToursPage';
+import PropertyPage from './pages/PropertyPage';
 import TripsPage from './pages/TripsPage';
 import ExcursionsPage from './pages/ExcursionsPage';
 import AboutPage from './pages/AboutPage';
@@ -20,7 +20,8 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="real-estate" element={<RealEstatePage />} />
-            <Route path="tours" element={<ToursPage />} />
+            <Route path="real-estate/:slug" element={<PropertyPage />} />
+            <Route path="tours" element={<Navigate to="/trips" replace />} />
             <Route path="trips" element={<TripsPage />} />
             <Route path="excursions" element={<ExcursionsPage />} />
             <Route path="about" element={<AboutPage />} />

@@ -1,51 +1,28 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, Home, MapPin, Coins, Compass, UserCheck } from 'lucide-react';
+import { ArrowRight, Play, Home, MapPin, Coins, Compass, Landmark } from 'lucide-react';
 import PropertyCard from '../components/PropertyCard';
+import { fetchProperties, type Property } from '../lib/properties';
 
 export default function HomePage() {
   const { t } = useTranslation();
+  const [featured, setFeatured] = useState<Property[] | null>(null);
+  const [failed, setFailed] = useState(false);
 
-  const properties = [
-    {
-      id: 1,
-      title: t('propertyCards.villaLimassol'),
-      price: 850000,
-      beds: 4,
-      baths: 3,
-      area: 280,
-      image: '/images/villa-limassol.jpg',
-      badge: t('featured.premium'),
-    },
-    {
-      id: 2,
-      title: t('propertyCards.apartmentPaphos'),
-      price: 420000,
-      beds: 2,
-      baths: 2,
-      area: 95,
-      image: '/images/apartments-paphos.jpg',
-      badge: t('featured.top'),
-    },
-    {
-      id: 3,
-      title: t('propertyCards.villaPolis'),
-      price: 530000,
-      beds: 3,
-      baths: 2,
-      area: 180,
-      image: '/images/villa-polis.jpg',
-    },
-    {
-      id: 4,
-      title: t('propertyCards.apartmentLarnaca'),
-      price: 360000,
-      beds: 2,
-      baths: 2,
-      area: 87,
-      image: '/images/apartments-larnaca.jpg',
-    },
-  ];
+  useEffect(() => {
+    let active = true;
+    fetchProperties()
+      .then((items) => {
+        if (active) setFeatured(items.slice(0, 4));
+      })
+      .catch(() => {
+        if (active) setFailed(true);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const benefits = [
     { icon: '⚖️', title: t('benefits.transparent') },
@@ -188,31 +165,31 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mb-3">
                   <Compass className="w-6 h-6 text-cyprus-orange" aria-hidden="true" />
                   <span className="text-xs md:text-sm font-medium text-cyprus-orange uppercase tracking-wider">
-                    {t('trips.title')}
+                    {t('nav.realEstate')}
                   </span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">
-                  {t('banners.excursionTours.title')}
+                  {t('banners.propertyTour.title')}
                 </h3>
                 <p className="text-sm md:text-base text-gray-200 mb-4">
-                  {t('banners.excursionTours.description')}
+                  {t('banners.propertyTour.description')}
                 </p>
                 <div className="inline-flex items-center gap-2 text-cyprus-orange font-medium group-hover:gap-3 transition-all">
-                  {t('banners.excursionTours.cta')}
+                  {t('banners.propertyTour.cta')}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </div>
               </div>
             </Link>
 
-            {/* Broker Tour Banner */}
+            {/* Pearl of the Mediterranean Banner */}
             <Link
-              to="/tours"
+              to="/trips"
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-2 transform focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               <div className="absolute inset-0">
                 <img
-                  src="/images/cyprus-tour.jpg"
-                  alt="Broker tour"
+                  src="/images/tour-northern-cyprus.jpg"
+                  alt={t('pearl.title')}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 motion-reduce:group-hover:scale-100"
                   width="800"
                   height="600"
@@ -221,19 +198,19 @@ export default function HomePage() {
               </div>
               <div className="relative p-6 md:p-8 h-64 md:h-72 flex flex-col justify-end text-white">
                 <div className="flex items-center gap-2 mb-3">
-                  <UserCheck className="w-6 h-6 text-cyprus-orange" aria-hidden="true" />
+                  <Landmark className="w-6 h-6 text-cyprus-orange" aria-hidden="true" />
                   <span className="text-xs md:text-sm font-medium text-cyprus-orange uppercase tracking-wider">
-                    {t('tours.title')}
+                    {t('pearl.badge')}
                   </span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">
-                  {t('banners.brokerTour.title')}
+                  {t('pearl.title')}
                 </h3>
                 <p className="text-sm md:text-base text-gray-200 mb-4">
-                  {t('banners.brokerTour.description')}
+                  {t('banners.pearlTour.description')}
                 </p>
                 <div className="inline-flex items-center gap-2 text-cyprus-orange font-medium group-hover:gap-3 transition-all">
-                  {t('banners.brokerTour.cta')}
+                  {t('banners.pearlTour.cta')}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </div>
               </div>
@@ -257,11 +234,19 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {properties.map((property) => (
-              <PropertyCard key={property.id} {...property} />
-            ))}
-          </div>
+          {failed ? (
+            <p className="text-cyprus-navy/70">{t('property.loadError')}</p>
+          ) : featured === null ? (
+            <p className="text-cyprus-navy/70">{t('property.loading')}</p>
+          ) : featured.length === 0 ? (
+            <p className="text-cyprus-navy/70">{t('catalog.empty')}</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {featured.map((property) => (
+                <PropertyCard key={property.slug} property={property} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
