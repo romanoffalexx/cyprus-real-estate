@@ -1,19 +1,689 @@
 [
   {
+    "slug": "lagoon-verde",
+    "name": "Lagoon Verde",
+    "type": "Апартаменты",
+    "developer": "DND",
+    "district": "Фамагуста",
+    "completionYear": "2028",
+    "priceFrom": 117000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "В Lagoon Verde вы найдете идеальную гармонию роскоши, комфорта и природной красоты — непревзойденный островной образ жизни, который ждет вас, чтобы назвать его домом.",
+    "description": "В Lagoon Verde вы найдете идеальную гармонию роскоши, комфорта и природной красоты — непревзойденный островной образ жизни, который ждет вас, чтобы назвать его домом.",
+    "areas": [
+      {
+        "label": "Студия",
+        "size": 51.18
+      },
+      {
+        "label": "1 + 1 Лофт Резиденция",
+        "size": 87.05
+      },
+      {
+        "label": "2 + 1 Резиденция на крыше",
+        "size": 149.4
+      },
+      {
+        "label": "2 + 1 Садовая Резиденция",
+        "size": 102.37
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/lagoon-verde/01.jpg",
+      "/images/properties/lagoon-verde/02.jpg",
+      "/images/properties/lagoon-verde/03.jpg",
+      "/images/properties/lagoon-verde/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "la-joya-perla-ii",
+    "name": "La Joya Perla II",
+    "type": "Апартаменты",
+    "developer": "DND",
+    "district": "Искеле",
+    "completionYear": "2027",
+    "priceFrom": 205900,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Откройте для себя мир роскошной жизни и круглогодичного комфорта, дополненный исключительным дизайном, удобствами и идеальным расположением.",
+    "description": "Откройте для себя мир роскошной жизни и круглогодичного комфорта, дополненный исключительным дизайном, удобствами и идеальным расположением.",
+    "areas": [],
+    "saleTypes": [
+      "Studio Residence Grand: 14 Units",
+      "Loft Residence Grand 1+1: 70 Units",
+      "Luxury Suite Residence 2+1: 8 Units",
+      "Luxury Garden Suite Grand 2+1: 24 Units",
+      "Luxury Garden Suite Premier 2+1: 12 Units"
+    ],
+    "images": [
+      "/images/properties/la-joya-perla-ii/01.jpg",
+      "/images/properties/la-joya-perla-ii/02.jpg",
+      "/images/properties/la-joya-perla-ii/03.jpg",
+      "/images/properties/la-joya-perla-ii/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "la-joya-beach-residence",
+    "name": "La Joya Beach Residence",
+    "type": "Апартаменты",
+    "developer": "DND",
+    "district": "Искеле",
+    "completionYear": "2025",
+    "priceFrom": 120000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Каждый из этих эксклюзивных апартаментов окружено изысканным бассейном, украшен уникальным баром в центре, создающим беспрецедентную атмосферу расслабления и релаксации.",
+    "description": "Каждый из этих эксклюзивных апартаментов окружено изысканным бассейном, украшен уникальным баром в центре, создающим беспрецедентную атмосферу расслабления и релаксации.",
+    "areas": [],
+    "saleTypes": [
+      "40 - лофтов 1+1",
+      "8 - пентхаусов с террасами 2+1",
+      "26 - студий-пентхаусов с террасами 1+0"
+    ],
+    "images": [
+      "/images/properties/la-joya-beach-residence/01.jpg",
+      "/images/properties/la-joya-beach-residence/02.jpg",
+      "/images/properties/la-joya-beach-residence/03.jpg",
+      "/images/properties/la-joya-beach-residence/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
     "slug": "habitat",
     "name": "Habitat",
-    "type": "Апартаменты",
+    "type": "Виллы и Апартаменты",
     "developer": "Evergreen",
     "district": "Татлысу",
     "completionYear": "2027",
     "priceFrom": 114950,
     "currency": "GBP",
     "badge": "Старт продаж",
-    "shortDescription": "Жилой проект с коммерческой зоной более 260 000 м² по концепции «город в городе», в 350 метрах от побережья Средиземного моря.",
-    "description": "Habitat — современный жилой проект с коммерческой зоной площадью более 260 000 м², реализованный по концепции «город в городе»: самая масштабная локация региона Эсентепе, всего в 350 метрах от побережья Средиземного моря и природной бухты.\n\nНа территории комплекса предусмотрены бассейны, фитнес-зона, магазины и рестораны, прогулочные аллеи и озеланённые дворы.",
+    "shortDescription": "Масштабный проект в элитном районе Эсентепе. С видом на море и горы и самой насыщенной внутренней инфраструктурой комплекса.",
+    "description": "Масштабный проект в элитном районе Эсентепе. С видом на море и горы и самой насыщенной внутренней инфраструктурой комплекса.\nТип недвижимости: Апартаменты и виллы",
     "areas": [],
-    "saleTypes": ["Студии", "1+1 и 2+1 апартаменты", "1+1 Loft и 2+1 Loft", "3+1 и бунгало"],
-    "images": ["/images/apartments-paphos.jpg"],
+    "saleTypes": [
+      "Студии",
+      "1+1 и 2+1 апартаменты",
+      "1+1 Loft и 2+1 Loft апартаменты",
+      "Бунгало"
+    ],
+    "images": [
+      "/images/properties/habitat/01.jpg",
+      "/images/properties/habitat/02.jpg",
+      "/images/properties/habitat/03.jpg",
+      "/images/properties/habitat/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "aphrodite-the-wave",
+    "name": "Aphrodite The Wave (Phase 3)",
+    "type": "Апартаменты",
+    "developer": "Evergreen",
+    "district": "Гюзельюрт",
+    "completionYear": "Сдан",
+    "priceFrom": 150000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Большинство квартир имеют прямой вид на море всего в 200 м от моря.\nЖителям понравится общий бассейн на уровне земли, окружающий Башню.",
+    "description": "Большинство квартир имеют прямой вид на море всего в 200 м от моря.\nЖителям понравится общий бассейн на уровне земли, окружающий Башню.\nНа первом этаже будут спа-центр, сауна и тренажерный зал, доступный исключительно для жителей\nБлагоустройство:\n• Общий открытый бассейн и крытый бассейн с подогревом\n• Детский бассейн\n• Доступ к объектам на курорте Aphrodite Beachfront\n• Клуб водных видов спорта\n• СПА-процедуры и массажи\n• Сауна\n• Тренажерный зал с йога-студией\n• Мини гольф\n• Детская игровая площадка и газоны\n• Круглогодичный ресторан и пляжный бар\n• Ландшафтные сады",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/aphrodite-the-wave/01.jpg",
+      "/images/properties/aphrodite-the-wave/02.jpg",
+      "/images/properties/aphrodite-the-wave/03.jpg",
+      "/images/properties/aphrodite-the-wave/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "aphrodite-aqua",
+    "name": "Aphrodite Aqua",
+    "type": "Апартаменты",
+    "developer": "Evergreen",
+    "district": "Гюзельюрт",
+    "completionYear": "2027",
+    "priceFrom": 76500,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Aphrodite Aqua — это роскошный жилой комплекс, расположенный на песчаных пляжах западного побережья Кипра. Этот комплекс предлагает идеальное сочетание приморской роскоши, захватывающих видов на море и уникальных удобств.",
+    "description": "Aphrodite Aqua — это роскошный жилой комплекс, расположенный на песчаных пляжах западного побережья Кипра. Этот комплекс предлагает идеальное сочетание приморской роскоши, захватывающих видов на море и уникальных удобств. Здесь вы найдете апартаменты-студии и апартаменты с одной спальней, все с прямым видом на море и всего в 300 метрах от пляжа.\nБлагоустройство:\n• Перед блоками находится аквапарк\n• Бассейны и тренажерные залы на крыше у каждого блока",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/aphrodite-aqua/01.jpg",
+      "/images/properties/aphrodite-aqua/02.jpg",
+      "/images/properties/aphrodite-aqua/03.jpg",
+      "/images/properties/aphrodite-aqua/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "aphrodite-wellness",
+    "name": "Aphrodite Wellness",
+    "type": "Апартаменты",
+    "developer": "Evergreen",
+    "district": "Гюзельюрт",
+    "completionYear": "2025",
+    "priceFrom": 81000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Aphrodite Wellness расположен на красивом побережье залива Морфу. Он станет одним из крупнейших и самых передовых оздоровительных и омолаживающих центров в Средиземноморье, предлагающим широкий спектр процедур, удобств и услуг, направленных на благополучие и долголетие.",
+    "description": "Aphrodite Wellness расположен на красивом побережье залива Морфу. Он станет одним из крупнейших и самых передовых оздоровительных и омолаживающих центров в Средиземноморье, предлагающим широкий спектр процедур, удобств и услуг, направленных на благополучие и долголетие.",
+    "areas": [
+      {
+        "label": "Студии",
+        "size": 31.0
+      },
+      {
+        "label": "1+1",
+        "size": 45.0
+      },
+      {
+        "label": "2+1",
+        "size": 49.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/aphrodite-wellness/01.jpg",
+      "/images/properties/aphrodite-wellness/02.jpg",
+      "/images/properties/aphrodite-wellness/03.jpg",
+      "/images/properties/aphrodite-wellness/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "aphrodite-park-4",
+    "name": "Aphrodite Park 4",
+    "type": "Апартаменты",
+    "developer": "Evergreen",
+    "district": "Никосия",
+    "completionYear": "Сдан",
+    "priceFrom": 80000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Отличительная черта Aphrodite Park Residence - это впечатляющая зона отдыха с большим бассейном и прекрасным садом, просторная солнечная терраса с шезлонгами, а также уютный бар. На крыше Aphrodite Park Residence есть еще один красивый бассейн, солнечная терраса и бар.",
+    "description": "Отличительная черта Aphrodite Park Residence - это впечатляющая зона отдыха с большим бассейном и прекрасным садом, просторная солнечная терраса с шезлонгами, а также уютный бар. На крыше Aphrodite Park Residence есть еще один красивый бассейн, солнечная терраса и бар. Отсюда открывается захватывающий вид на Средиземное море.\nБлагоустройство:\n• открытый бассейн с зоной отдыха\n• крытый бассейн с подогревом\n• фитнес-центр\n• сауна\n• ресторан у пляжа",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/aphrodite-park-4/01.jpg",
+      "/images/properties/aphrodite-park-4/02.jpg",
+      "/images/properties/aphrodite-park-4/03.jpg",
+      "/images/properties/aphrodite-park-4/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "cest-la-vie",
+    "name": "C'est La Vie",
+    "type": "Виллы и Апартаменты",
+    "developer": "Evergreen",
+    "district": "Татлысу",
+    "completionYear": "2025",
+    "priceFrom": 170000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "C’est La Vie — это эксклюзивный проект на берегу моря, который предлагает уникальный опыт жизни в природной красоте района Бахчели на Северном Кипре.",
+    "description": "C’est La Vie — это эксклюзивный проект на берегу моря, который предлагает уникальный опыт жизни в природной красоте района Бахчели на Северном Кипре. Этот проект расположен между великолепными горами Бешпармак и Средиземным морем, обеспечивая жителям непередаваемые впечатления и возможность проживать в прибрежной роскоши. C’est La Vie разработан с особым вниманием к деталям, предлагая разнообразные жилые помещения, чтобы соответствовать различным предпочтениям и потребностям.\nТип недвижимости: Виллы и апартаменты\nБлагоустройство:\n• Детская площадка\n• Тренажерный зал\n• Сауна\n• СПА\n• Бассейн\n• велнес центр\n• 5 минут от оборудованного пляжа",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/cest-la-vie/01.jpg",
+      "/images/properties/cest-la-vie/02.jpg",
+      "/images/properties/cest-la-vie/03.jpg",
+      "/images/properties/cest-la-vie/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "courtyard-platinum",
+    "name": "Courtyard Platinum",
+    "type": "Апартаменты",
+    "developer": "Döveç Construction",
+    "district": "Боаз",
+    "completionYear": "2025",
+    "priceFrom": 143000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Courtyard Platinum — это роскошный жилой комплекс, расположенный на Северном Кипре в регионе Искеле. Этот проект, разработанный Döveç Group, предлагает уникальный опыт жизни, сочетая комфорт и роскошь.",
+    "description": "Courtyard Platinum — это роскошный жилой комплекс, расположенный на Северном Кипре в регионе Искеле. Этот проект, разработанный Döveç Group, предлагает уникальный опыт жизни, сочетая комфорт и роскошь. Комплекс предлагает разнообразные варианты жилья, включая студии, квартиры с одной, двумя и тремя спальнями, а также квартиры с садом на первом этаже и крышей-дуплексами.",
+    "areas": [
+      {
+        "label": "1+1 апартаменты",
+        "size": 81.0
+      },
+      {
+        "label": "3+1 апартаменты",
+        "size": 163.0
+      },
+      {
+        "label": "1+1 дуплекс",
+        "size": 69.0
+      },
+      {
+        "label": "2+1 дуплекс",
+        "size": 112.0
+      },
+      {
+        "label": "3+1 дуплекс",
+        "size": 174.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/courtyard-platinum/01.jpg",
+      "/images/properties/courtyard-platinum/02.jpg",
+      "/images/properties/courtyard-platinum/03.jpg",
+      "/images/properties/courtyard-platinum/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "d-point",
+    "name": "D-Point",
+    "type": "Апартаменты",
+    "developer": "Döveç Construction",
+    "district": "Искеле",
+    "completionYear": "2028",
+    "priceFrom": 160000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "D-Point предлагает многогранный жилой и деловой центр, отражающий динамику как региональной, так и городской жизни.",
+    "description": "D-Point предлагает многогранный жилой и деловой центр, отражающий динамику как региональной, так и городской жизни.\nПлощади в продаже:\nПроект включает в себя различные типы квартир, подходящие для разных стилей жизни:\n• Квартиры 2+1: отличаются большой площадью, современным дизайном и просторными планировками.\n• Студии и апартаменты 1+1: компактные, но функциональные, включающие в себя динамику городской жизни.",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/d-point/01.jpg",
+      "/images/properties/d-point/02.jpg",
+      "/images/properties/d-point/03.jpg",
+      "/images/properties/d-point/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "maldives-homes",
+    "name": "Maldives Homes",
+    "type": "Виллы и Апартаменты",
+    "developer": "Cyprus Construction",
+    "district": "Кирения",
+    "completionYear": "Сдан",
+    "priceFrom": 475000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Комплекс Maldives Homes состоит из уникальных вилл и роскошных апартаментов, расположенных на востоке города Кирении в Эсентепе.",
+    "description": "Комплекс Maldives Homes состоит из уникальных вилл и роскошных апартаментов, расположенных на востоке города Кирении в Эсентепе.",
+    "areas": [
+      {
+        "label": "2+1",
+        "size": 204.0
+      },
+      {
+        "label": "Виллы",
+        "size": 157.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/maldives-homes/01.jpg",
+      "/images/properties/maldives-homes/02.jpg",
+      "/images/properties/maldives-homes/03.jpg",
+      "/images/properties/maldives-homes/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "bahamas-homes",
+    "name": "Bahamas Homes",
+    "type": "Апартаменты",
+    "developer": "Cyprus Construction",
+    "district": "Эсентепе",
+    "completionYear": "2026",
+    "priceFrom": 320950,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Расположенный на востоке Кирении всего в 100 метрах от Средиземного моря и горами Пентадактилос, новый масштабный жилой комплекс предлагает полную автономность и обширные возможности для инвестирования с гарантированным доходом круглый год.",
+    "description": "Расположенный на востоке Кирении всего в 100 метрах от Средиземного моря и горами Пентадактилос, новый масштабный жилой комплекс предлагает полную автономность и обширные возможности для инвестирования с гарантированным доходом круглый год. Этот проект — прекрасный шанс насладиться здоровым горным воздухом.\nТехническое состояние квартир при передаче их владельцам:\n• Полностью оборудованная ванная комната\n• Кухня со встроенной мебелью\n• Керамическая плитка на полу и стенах в ванной комнате\n• Встроенный шкаф\n• Двойные стеклопакеты на окнах\n• Генератор",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/bahamas-homes/01.jpg",
+      "/images/properties/bahamas-homes/02.jpg",
+      "/images/properties/bahamas-homes/03.jpg",
+      "/images/properties/bahamas-homes/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "aloha-beach-resort",
+    "name": "Aloha Beach Resort",
+    "type": "Виллы и Апартаменты",
+    "developer": "Cyprus Construction",
+    "district": "Татлысу",
+    "completionYear": "2026",
+    "priceFrom": 182750,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Комплекс расположен в живописном районе Татлысу, откуда открывается захватывающий вид на Средиземное море и пышную зелень гор региона.",
+    "description": "Комплекс расположен в живописном районе Татлысу, откуда открывается захватывающий вид на Средиземное море и пышную зелень гор региона.\nТип недвижимости: Виллы и апартаменты",
+    "areas": [],
+    "saleTypes": [
+      "Апартаменты 1+1 PENTHOUSE и 1+1 GARDEN",
+      "Апартаменты 2+1 LOFT PENTHOUSE"
+    ],
+    "images": [
+      "/images/properties/aloha-beach-resort/01.jpg",
+      "/images/properties/aloha-beach-resort/02.jpg",
+      "/images/properties/aloha-beach-resort/03.jpg",
+      "/images/properties/aloha-beach-resort/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "pearl-island-homes",
+    "name": "Pearl Island Homes",
+    "type": "Апартаменты",
+    "developer": "Cyprus Construction",
+    "district": "Эсентепе",
+    "completionYear": "Сдан",
+    "priceFrom": 194995,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Pearl Island состоит из 156 квартир-студий: квартиры-студии на первом этаже имеют общую площадь 35 м2, террасу в саду 8 м2 и квартиры-студии на втором этаже с общей площадью 35 м2, террасой 8 м2 и террасой на крыше 35 м2.",
+    "description": "Pearl Island состоит из 156 квартир-студий: квартиры-студии на первом этаже имеют общую площадь 35 м2, террасу в саду 8 м2 и квартиры-студии на втором этаже с общей площадью 35 м2, террасой 8 м2 и террасой на крыше 35 м2.\nВ проекте будут мини-маркет, ресторан и кафе, а также бассейн в форме жемчужины с видом на море\nНаземный паркинг. Выделенное парковочное место на каждую виллу/апартамент",
+    "areas": [],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/pearl-island-homes/01.jpg",
+      "/images/properties/pearl-island-homes/02.jpg",
+      "/images/properties/pearl-island-homes/03.jpg",
+      "/images/properties/pearl-island-homes/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "hawaii-homes",
+    "name": "Hawaii Homes",
+    "type": "Виллы и Апартаменты",
+    "developer": "Cyprus Construction",
+    "district": "Татлысу",
+    "completionYear": "2025",
+    "priceFrom": 184950,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Hawaii Homes - это крупнейший на Кипре жилой проект на побережье Татлису, проект включает искусственные реки, озера, и острова, разбросанные по всему участку, с добавлением наших знаменитых садовых дизайнов. Будет 35% застройка, 65% инфраструктура - бассейны, озеленение.",
+    "description": "Hawaii Homes - это крупнейший на Кипре жилой проект на побережье Татлису, проект включает искусственные реки, озера, и острова, разбросанные по всему участку, с добавлением наших знаменитых садовых дизайнов. Будет 35% застройка, 65% инфраструктура - бассейны, озеленение.",
+    "areas": [
+      {
+        "label": "Студии",
+        "size": 43.0
+      },
+      {
+        "label": "1+1",
+        "size": 50.0
+      },
+      {
+        "label": "2+1 двухэтажный лофт",
+        "size": 75.0
+      },
+      {
+        "label": "Виллы",
+        "size": 325.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/hawaii-homes/01.jpg",
+      "/images/properties/hawaii-homes/02.jpg",
+      "/images/properties/hawaii-homes/03.jpg",
+      "/images/properties/hawaii-homes/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "grand-sapphire-blu",
+    "name": "Grand Sapphire Blu",
+    "type": "Апартаменты",
+    "developer": "NorthernLand Construction",
+    "district": "Long Beach",
+    "completionYear": "2027",
+    "priceFrom": 156900,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Cостоит из 5 блоков по 29 этажей и десяти блоков по 5 этажей вдоль Комплекса. По 16 квартир на этаже.",
+    "description": "Cостоит из 5 блоков по 29 этажей и десяти блоков по 5 этажей вдоль Комплекса. По 16 квартир на этаже. У всех пентхаусов будет свой собственный бассейн и невероятные виды на море и горы!",
+    "areas": [
+      {
+        "label": "Студии",
+        "size": 55.0
+      },
+      {
+        "label": "1+1",
+        "size": 62.0
+      },
+      {
+        "label": "2+1",
+        "size": 117.0
+      },
+      {
+        "label": "3+1",
+        "size": 230.0
+      },
+      {
+        "label": "3+1 пентхаусы",
+        "size": 300.0
+      },
+      {
+        "label": "4+1 пентхаусы",
+        "size": null
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/grand-sapphire-blu/01.jpg",
+      "/images/properties/grand-sapphire-blu/02.jpg",
+      "/images/properties/grand-sapphire-blu/03.jpg",
+      "/images/properties/grand-sapphire-blu/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "casa-del-mare",
+    "name": "Casa Del Mare",
+    "type": "Апартаменты",
+    "developer": "NorthernLand Construction",
+    "district": "Бахчели",
+    "completionYear": "2026",
+    "priceFrom": 132900,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "CASA DEL MARE - это будет маленькая Швейцария на солнечном Кипре с красивым ландшафтным дизайном. Будет прямой вид на море и горы.",
+    "description": "CASA DEL MARE - это будет маленькая Швейцария на солнечном Кипре с красивым ландшафтным дизайном. Будет прямой вид на море и горы.\nCASA DEL MARE расположен всего в 5 минутах езды от профессионального 18-луночного международного поля для гольфа и еще в 25 минутах езды от Кирении с ведущими университетами, школами, а также ресторанами, казино, шоппинг центрами, клубами и культурными достопримечательностями.\nТип недвижимости: Виллы и апартаменты",
+    "areas": [
+      {
+        "label": "Студии",
+        "size": 45.0
+      },
+      {
+        "label": "Студии",
+        "size": 82.0
+      },
+      {
+        "label": "1+1",
+        "size": 63.0
+      },
+      {
+        "label": "1+1",
+        "size": 115.0
+      },
+      {
+        "label": "1+1 Loft",
+        "size": 63.0
+      },
+      {
+        "label": "1+1 Loft",
+        "size": 100.0
+      },
+      {
+        "label": "2+1",
+        "size": 89.0
+      },
+      {
+        "label": "2+1",
+        "size": 142.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/casa-del-mare/01.jpg",
+      "/images/properties/casa-del-mare/02.jpg",
+      "/images/properties/casa-del-mare/03.jpg",
+      "/images/properties/casa-del-mare/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "bellagio-residence",
+    "name": "Bellagio Residence",
+    "type": "Апартаменты",
+    "developer": "NorthernLand Construction",
+    "district": "Искеле",
+    "completionYear": "2025",
+    "priceFrom": 104500,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Bellagio сочетает в себе городской и курортный образ жизни, предоставляя своим жителям 365-дневный отдых класса люкс.",
+    "description": "Bellagio сочетает в себе городской и курортный образ жизни, предоставляя своим жителям 365-дневный отдых класса люкс. Bellagio находится в 200 метрах от частного пляжа, в 50 метрах от медицинского центра Искеле и в 2 км от центра города, благодаря своему расположению будет привлекательным для инвесторов, ищущих доступное жилье и пассивный доход от аренды.",
+    "areas": [
+      {
+        "label": "Студии – 39",
+        "size": 45.0
+      },
+      {
+        "label": "1+1 апартаменты – 72",
+        "size": 85.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/bellagio-residence/01.jpg",
+      "/images/properties/bellagio-residence/02.jpg",
+      "/images/properties/bellagio-residence/03.jpg",
+      "/images/properties/bellagio-residence/04.jpg"
+    ],
+    "floorPlans": [],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
+    "slug": "royal-point",
+    "name": "Royal Point",
+    "type": "Апартаменты",
+    "developer": "NorthernLand Construction",
+    "district": "Искеле",
+    "completionYear": "2024",
+    "priceFrom": 106500,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Royal Point — это уникальный жилой комплекс, состоящий из 48 хорошо оборудованных апартаментов, который предоставляет разнообразные варианты для удовлетворения различных потребностей.",
+    "description": "Royal Point — это уникальный жилой комплекс, состоящий из 48 хорошо оборудованных апартаментов, который предоставляет разнообразные варианты для удовлетворения различных потребностей. Независимо от ваших предпочтений, здесь вы найдете идеальный вариант для комфортного проживания",
+    "areas": [
+      {
+        "label": "Апартаменты 1+1",
+        "size": 46.0
+      },
+      {
+        "label": "Апартаменты 2+1",
+        "size": 56.0
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/royal-point/01.jpg",
+      "/images/properties/royal-point/02.jpg",
+      "/images/properties/royal-point/03.jpg",
+      "/images/properties/royal-point/04.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,
@@ -34,7 +704,9 @@
     "description": "Данные о проекте заполняются в админ-панели.",
     "areas": [],
     "saleTypes": [],
-    "images": ["/images/villa-limassol.jpg"],
+    "images": [
+      "/images/villa-limassol.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,
@@ -55,7 +727,9 @@
     "description": "Данные о проекте заполняются в админ-панели.",
     "areas": [],
     "saleTypes": [],
-    "images": ["/images/apartments-paphos.jpg"],
+    "images": [
+      "/images/apartments-paphos.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,
@@ -76,7 +750,9 @@
     "description": "Данные о проекте заполняются в админ-панели.",
     "areas": [],
     "saleTypes": [],
-    "images": ["/images/villa-polis.jpg"],
+    "images": [
+      "/images/villa-polis.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,
@@ -97,7 +773,9 @@
     "description": "Данные о проекте заполняются в админ-панели.",
     "areas": [],
     "saleTypes": [],
-    "images": ["/images/apartments-larnaca.jpg"],
+    "images": [
+      "/images/apartments-larnaca.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,
@@ -118,7 +796,9 @@
     "description": "Данные о проекте заполняются в админ-панели.",
     "areas": [],
     "saleTypes": [],
-    "images": ["/images/villa-limassol.jpg"],
+    "images": [
+      "/images/villa-limassol.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,
@@ -139,7 +819,9 @@
     "description": "Данные о проекте заполняются в админ-панели.",
     "areas": [],
     "saleTypes": [],
-    "images": ["/images/apartments-paphos.jpg"],
+    "images": [
+      "/images/apartments-paphos.jpg"
+    ],
     "floorPlans": [],
     "lat": null,
     "lng": null,

@@ -243,8 +243,8 @@ function PropertyView({ slug }: { slug: string }) {
             <div className="mt-6 max-w-2xl">
               <h3 className="font-semibold text-cyprus-navy mb-3">{t('property.areas')}</h3>
               <ul className="divide-y divide-gray-200 rounded-xl bg-white shadow-card">
-                {property.areas.map((area) => (
-                  <li key={area.label} className="flex justify-between gap-4 px-4 py-3">
+                {property.areas.map((area, index) => (
+                  <li key={`${area.label}-${index}`} className="flex justify-between gap-4 px-4 py-3">
                     <span className="text-gray-700">{area.label}</span>
                     <span className="font-medium text-cyprus-navy whitespace-nowrap">
                       {area.size === null
