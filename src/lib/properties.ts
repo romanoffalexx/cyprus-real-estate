@@ -37,6 +37,10 @@ export interface Lead {
   propertySlug: string;
   message: string;
   createdAt: string;
+  consent?: {
+    policyVersion: string;
+    acceptedAt: string;
+  };
 }
 
 export const CURRENCIES: Currency[] = ['EUR', 'GBP', 'USD'];

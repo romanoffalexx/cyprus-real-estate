@@ -76,6 +76,7 @@ export async function submitLead(input: {
   email: string;
   message: string;
   consent: boolean;
+  consentPolicyVersion: string;
   propertySlug: string;
   website: string;
 }): Promise<void> {

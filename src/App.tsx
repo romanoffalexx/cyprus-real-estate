@@ -11,6 +11,8 @@ import ExcursionsPage from './pages/ExcursionsPage';
 import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
+import DataRightsPage from './pages/DataRightsPage';
 import AdminPage from './pages/AdminPage';
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
             <Route path="about" element={<AboutPage />} />
             <Route path="contacts" element={<ContactsPage />} />
             <Route path="privacy" element={<PrivacyPage />} />
+            <Route path="cookies" element={<CookiePolicyPage />} />
+            <Route path="data-rights" element={<DataRightsPage />} />
             <Route path="admin" element={<AdminPage />} />
           </Route>
         </Routes>

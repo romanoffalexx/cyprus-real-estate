@@ -20,6 +20,11 @@ const SESSION_HOURS = Number(process.env.ADMIN_SESSION_HOURS) || 12;
 const MAX_UPLOAD_MB = Number(process.env.MAX_UPLOAD_MB) || 8;
 const MAX_BODY_MB = Number(process.env.MAX_BODY_MB) || 2;
 const MAX_LEADS = Number(process.env.MAX_LEADS) || 1000;
+const retentionSetting = process.env.LEAD_RETENTION_DAYS?.trim();
+const LEAD_RETENTION_DAYS = retentionSetting ? Number(retentionSetting) : null;
+if (LEAD_RETENTION_DAYS !== null && (!Number.isInteger(LEAD_RETENTION_DAYS) || LEAD_RETENTION_DAYS < 1)) {
+  throw new Error('LEAD_RETENTION_DAYS должен быть целым числом больше нуля или пустым');
+}
 
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const CURRENCIES = ['EUR', 'GBP', 'USD'];
@@ -82,6 +87,18 @@ async function loadProperties() {
 }
 
 const loadLeads = () => loadJson(LEADS_FILE, []);
+
+async function loadActiveLeads() {
+  const leads = await loadLeads();
+  if (LEAD_RETENTION_DAYS === null) return leads;
+  const cutoff = Date.now() - LEAD_RETENTION_DAYS * 86_400_000;
+  const active = leads.filter((lead) => {
+    const createdAt = Date.parse(lead.createdAt);
+    return !Number.isFinite(createdAt) || createdAt >= cutoff;
+  });
+  if (active.length !== leads.length) await saveJson(LEADS_FILE, active);
+  return active;
+}
 
 /* ---------- auth ---------- */
 
@@ -299,7 +316,9 @@ async function handleLeadCreate(req, res) {
 
   const name = text(body.name, 120, 'Имя', true);
   const phone = text(body.phone, 40, 'Телефон', true);
-  if (!body.consent) throw new HttpError(400, 'Нужно согласие на обработку данных');
+  if (body.consent !== true) throw new HttpError(400, 'Нужно согласие на обработку данных');
+  const policyVersion = text(body.consentPolicyVersion, 40, 'Версия политики', true);
+  const createdAt = new Date().toISOString();
 
   const lead = {
     id: randomUUID(),
@@ -308,10 +327,11 @@ async function handleLeadCreate(req, res) {
     email: text(body.email, 160),
     propertySlug: text(body.propertySlug, 80),
     message: text(body.message, 2000),
-    createdAt: new Date().toISOString(),
+    createdAt,
+    consent: { policyVersion, acceptedAt: createdAt },
   };
 
-  const leads = await loadLeads();
+  const leads = await loadActiveLeads();
   leads.push(lead);
   await saveJson(LEADS_FILE, leads.slice(-MAX_LEADS));
   json(res, 201, { ok: true, id: lead.id });
@@ -426,11 +446,11 @@ async function handleApi(req, res, url) {
     }
     if (parts[1] === 'leads') {
       if (parts.length === 2 && req.method === 'GET') {
-        json(res, 200, (await loadLeads()).slice().reverse());
+        json(res, 200, (await loadActiveLeads()).slice().reverse());
         return;
       }
       if (parts.length === 3 && req.method === 'DELETE') {
-        const leads = await loadLeads();
+        const leads = await loadActiveLeads();
         const next = leads.filter((item) => item.id !== parts[2]);
         if (next.length === leads.length) throw new HttpError(404, 'Заявка не найдена');
         await saveJson(LEADS_FILE, next);
@@ -492,6 +512,7 @@ const server = createServer(async (req, res) => {
 
 await mkdir(DATA_DIR, { recursive: true });
 await loadProperties();
+await loadActiveLeads();
 
 server.listen(PORT, () => {
   console.log(`http://localhost:${PORT} · данные: ${DATA_DIR} · сайт: ${DIST_DIR}`);

@@ -335,14 +335,24 @@ export default function AdminPage() {
                       </p>
                       <p className="text-xs text-gray-500">
                         {new Date(lead.createdAt).toLocaleString()} — {t('admin.leadObject')}:{' '}
-                        <a
-                          href={`/real-estate/${lead.propertySlug}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline decoration-gray-300"
-                        >
-                          {lead.propertySlug || '—'}
-                        </a>
+                        {lead.propertySlug ? (
+                          <a
+                            href={`/real-estate/${lead.propertySlug}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-gray-300"
+                          >
+                            {lead.propertySlug}
+                          </a>
+                        ) : '—'}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {lead.consent
+                          ? t('admin.leadConsent', {
+                              version: lead.consent.policyVersion,
+                              date: new Date(lead.consent.acceptedAt).toLocaleString(),
+                            })
+                          : t('admin.leadConsentMissing')}
                       </p>
                       {lead.message && (
                         <p className="text-sm text-gray-700 whitespace-pre-line">

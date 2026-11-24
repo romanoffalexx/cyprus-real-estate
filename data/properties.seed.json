@@ -352,6 +352,51 @@
     "published": true
   },
   {
+    "slug": "querencia",
+    "name": "Querencia",
+    "type": "Апартаменты",
+    "developer": "Döveç Construction",
+    "district": "Искеле",
+    "completionYear": "2026",
+    "priceFrom": 136000,
+    "currency": "GBP",
+    "badge": "",
+    "shortDescription": "Querencia — это высококлассные апартаменты с просторными видовыми террасами для максимального удобства жильцов.",
+    "description": "Querencia — это высококлассные апартаменты с просторными видовыми террасами для максимального удобства жильцов. Всего в комплексе будет расположены 686 комфортабельных апартаментов.\nQuerencia — это 4 башни разной этажности.",
+    "areas": [
+      {
+        "label": "Студия",
+        "size": 45.58
+      },
+      {
+        "label": "1+1",
+        "size": 82.31
+      },
+      {
+        "label": "2+1",
+        "size": 116.43
+      },
+      {
+        "label": "3+1",
+        "size": 159.34
+      }
+    ],
+    "saleTypes": [],
+    "images": [
+      "/images/properties/querencia/01.jpg",
+      "/images/properties/querencia/02.jpg",
+      "/images/properties/querencia/03.jpg",
+      "/images/properties/querencia/04.jpg"
+    ],
+    "floorPlans": [
+      "/images/properties/querencia/plan.jpg"
+    ],
+    "lat": null,
+    "lng": null,
+    "pdfUrl": "",
+    "published": true
+  },
+  {
     "slug": "maldives-homes",
     "name": "Maldives Homes",
     "type": "Виллы и Апартаменты",

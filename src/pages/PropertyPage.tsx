@@ -11,6 +11,8 @@ import {
   type Property,
 } from '../lib/properties';
 import { submitLead } from '../lib/api';
+import { openCookieSettings, useCookieConsent } from '../lib/consent';
+import { PRIVACY_POLICY_VERSION } from '../lib/legal';
 
 type Status = 'loading' | 'ready' | 'not-found' | 'error';
 
@@ -29,7 +31,10 @@ function PropertyView({ slug }: { slug: string }) {
   const [activeImage, setActiveImage] = useState(0);
   const [form, setForm] = useState(EMPTY_FORM);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState('');
+  const consent = useCookieConsent();
+  const mapAllowed = consent?.categories.functional === true;
 
   useEffect(() => {
     let active = true;
@@ -76,12 +81,19 @@ function PropertyView({ slug }: { slug: string }) {
     event.preventDefault();
     if (!property) return;
     setSendError('');
+    setSending(true);
     try {
-      await submitLead({ ...form, propertySlug: property.slug });
+      await submitLead({
+        ...form,
+        propertySlug: property.slug,
+        consentPolicyVersion: PRIVACY_POLICY_VERSION,
+      });
       setSent(true);
       setForm(EMPTY_FORM);
     } catch (error) {
       setSendError(error instanceof Error ? error.message : t('property.sendError'));
+    } finally {
+      setSending(false);
     }
   };
 
@@ -300,23 +312,38 @@ function PropertyView({ slug }: { slug: string }) {
               {t('property.location')}
             </h2>
             <div className="rounded-2xl overflow-hidden shadow-card bg-white">
-              <iframe
-                title={t('property.location')}
-                src={mapSrc}
-                className="w-full h-[300px] sm:h-[420px] border-0"
-                loading="lazy"
-              />
-              <div className="p-4">
-                <a
-                  href={`https://www.openstreetmap.org/?mlat=${property.lat}&mlon=${property.lng}#map=16/${property.lat}/${property.lng}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-cyprus-orange hover:text-cyprus-orange/80 font-medium focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none rounded"
-                >
-                  <MapPin className="w-5 h-5" aria-hidden="true" />
-                  {t('property.openMap')}
-                </a>
-              </div>
+              {mapAllowed ? (
+                <>
+                  <iframe
+                    title={t('property.location')}
+                    src={mapSrc}
+                    className="w-full h-[300px] sm:h-[420px] border-0"
+                    loading="lazy"
+                  />
+                  <div className="p-4">
+                    <a
+                      href={`https://www.openstreetmap.org/?mlat=${property.lat}&mlon=${property.lng}#map=16/${property.lat}/${property.lng}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-cyprus-orange hover:text-cyprus-orange/80 font-medium focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none rounded"
+                    >
+                      <MapPin className="w-5 h-5" aria-hidden="true" />
+                      {t('property.openMap')}
+                    </a>
+                  </div>
+                </>
+              ) : (
+                <div className="min-h-[260px] sm:min-h-[340px] p-6 flex flex-col items-start justify-center gap-4">
+                  <p className="text-gray-700 max-w-xl">{t('property.mapBlocked')}</p>
+                  <button
+                    type="button"
+                    onClick={openCookieSettings}
+                    className="bg-cyprus-navy text-white px-5 py-3 rounded-lg hover:bg-cyprus-navy/90 transition-colors font-medium focus-visible:ring-2 focus-visible:ring-cyprus-navy focus-visible:ring-offset-2 focus-visible:outline-none"
+                  >
+                    {consent ? t('property.mapSettings') : t('property.enableMap')}
+                  </button>
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -423,10 +450,11 @@ function PropertyView({ slug }: { slug: string }) {
               )}
               <button
                 type="submit"
-                className="sm:col-span-2 bg-cyprus-orange text-white py-3 rounded-lg hover:bg-cyprus-orange/90 transition-colors font-medium inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
+                disabled={sending || !form.consent}
+                className="sm:col-span-2 bg-cyprus-orange text-white py-3 rounded-lg hover:bg-cyprus-orange/90 transition-colors font-medium inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-cyprus-orange focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 <Send className="w-5 h-5" aria-hidden="true" />
-                {t('contact.send')}
+                {sending ? t('contact.sending') : t('contact.send')}
               </button>
             </form>
           )}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { openCookieSettings } from '../lib/consent';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -57,9 +58,24 @@ export default function Footer() {
           <p className="text-sm text-gray-300">
             © 2024 Express Travel. {t('footer.rights')}.
           </p>
-          <Link to="/privacy" className="text-sm text-gray-300 hover:text-white transition-colors">
-            {t('footer.privacy')}
-          </Link>
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-gray-300">
+            <Link to="/privacy" className="hover:text-white transition-colors">
+              {t('footer.privacy')}
+            </Link>
+            <Link to="/cookies" className="hover:text-white transition-colors">
+              {t('footer.cookies')}
+            </Link>
+            <Link to="/data-rights" className="hover:text-white transition-colors">
+              {t('footer.dataRights')}
+            </Link>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="hover:text-white transition-colors underline underline-offset-4"
+            >
+              {t('cookie.settings')}
+            </button>
+          </nav>
         </div>
       </div>
     </footer>
